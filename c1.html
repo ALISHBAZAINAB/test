@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body{
+            background-color: lightblue;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 50px;
+        }
+        #msg{
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Login</h2>
+    <p>Use ID: admin & Password: admin</p>
+
+    <input type="text" id="userid" placeholder="Enter ID"><br><br>
+    <input type="password" id="password" placeholder="Enter Password"><br><br>
+
+    <button onclick="checkLogin()">Login</button>
+
+    <p id="msg"></p>
+
+    <script>
+        function checkLogin(){
+            let id = document.getElementById("userid").value;
+            let pass = document.getElementById("password").value;
+
+            if(id === "admin" && pass === "admin"){
+                window.location.href = "nextpage.html";
+            } else {
+                document.getElementById("msg").innerText = "Invalid credentials";
+            }
+        }
+    </script>
+
+</body>
+</html>
